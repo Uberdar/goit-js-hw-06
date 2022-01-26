@@ -5,10 +5,13 @@ const number = document.querySelector("#value");
 
 function onIncrementBtnPush(){
     counterValue +=1;
-    number.textContent = counterValue;
+    changeValue();
 }
 function onDecrementBtnPush(){
     counterValue -=1;
+    changeValue();
+}
+function changeValue(){
     number.textContent = counterValue;
 }
 incBtn.addEventListener("click", onIncrementBtnPush);

@@ -14,17 +14,9 @@ const images = [
   },
 ];
 
-const arr = [];
-function test(){
-  images.forEach(elem => {
-    console.log(elem);
-    const a = document.createElement("img");
-    a.src = elem.url;
-    a.alt = elem.alt;
-    a.width = 320;
-    arr.push(a);
-  });
-};
-test();
-console.log(arr);
-document.querySelector(".gallery").append(...arr);
+  const mainRef = document.querySelector(".gallery");
+  const createEl = images.map((elem) => 
+    `<img src=${elem.url} alt="${elem.alt}" width=320>`).join("");
+  mainRef.insertAdjacentHTML("afterbegin", createEl);
+
+
